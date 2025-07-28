@@ -31,8 +31,8 @@ def draw_surface():
     ax = cast(Axes3D, fig.add_subplot(111, projection="3d"))
 
     # x, y の範囲を設定する
-    x = np.linspace(-6, 6, 500)
-    y = np.linspace(-6, 6, 500)
+    x = np.linspace(-10, 10, 1000)
+    y = np.linspace(-10, 10, 1000)
     X, Y = np.meshgrid(x, y)
     Z = surface_setting(X, Y)
 

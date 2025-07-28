@@ -16,10 +16,7 @@ def surface_setting(x, y):
     """
     描画する曲面の関数を定義する関数
     """
-    r = 5
-    mask = x**2 + y**2 <= r**2
-    z = np.full_like(x, np.nan)
-    z[mask] = np.sqrt(r**2 - x[mask]**2 - y[mask]**2)
+    z = x**2 + y**2
     return z
 
 
@@ -31,8 +28,8 @@ def draw_surface():
     ax = cast(Axes3D, fig.add_subplot(111, projection="3d"))
 
     # x, y の範囲を設定する
-    x = np.linspace(-6, 6, 500)
-    y = np.linspace(-6, 6, 500)
+    x = np.linspace(-10, 10, 1000)
+    y = np.linspace(-10, 10, 1000)
     X, Y = np.meshgrid(x, y)
     Z = surface_setting(X, Y)
 
